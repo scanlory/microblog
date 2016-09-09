@@ -1,0 +1,240 @@
+2016-08-24 21:02:49,019 INFO: microblog startup [in D:\PyCharm Projects\microblog\app\__init__.py:57]
+2016-08-24 21:03:04,151 ERROR: Exception on /edit [POST] [in C:\Anaconda3\lib\site-packages\flask\app.py:1587]
+Traceback (most recent call last):
+  File "C:\Anaconda3\lib\site-packages\sqlalchemy\engine\base.py", line 1139, in _execute_context
+    context)
+  File "C:\Anaconda3\lib\site-packages\sqlalchemy\engine\default.py", line 450, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.IntegrityError: UNIQUE constraint failed: user.nickname
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Anaconda3\lib\site-packages\flask\app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Anaconda3\lib\site-packages\flask\app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Anaconda3\lib\site-packages\flask\app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Anaconda3\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Anaconda3\lib\site-packages\flask\app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Anaconda3\lib\site-packages\flask\app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Anaconda3\lib\site-packages\flask_login.py", line 792, in decorated_view
+    return func(*args, **kwargs)
+  File "D:\PyCharm Projects\microblog\app\views.py", line 152, in edit
+    db.session.commit()
+  File "C:\Anaconda3\lib\site-packages\sqlalchemy\orm\scoping.py", line 157, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "C:\Anaconda3\lib\site-packages\sqlalchemy\orm\session.py", line 801, in commit
+    self.transaction.commit()
+  File "C:\Anaconda3\lib\site-packages\sqlalchemy\orm\session.py", line 392, in commit
+    self._prepare_impl()
+  File "C:\Anaconda3\lib\site-packages\sqlalchemy\orm\session.py", line 372, in _prepare_impl
+    self.session.flush()
+  File "C:\Anaconda3\lib\site-packages\sqlalchemy\orm\session.py", line 2019, in flush
+    self._flush(objects)
+  File "C:\Anaconda3\lib\site-packages\sqlalchemy\orm\session.py", line 2137, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "C:\Anaconda3\lib\site-packages\sqlalchemy\util\langhelpers.py", line 60, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "C:\Anaconda3\lib\site-packages\sqlalchemy\util\compat.py", line 186, in reraise
+    raise value
+  File "C:\Anaconda3\lib\site-packages\sqlalchemy\orm\session.py", line 2101, in _flush
+    flush_context.execute()
+  File "C:\Anaconda3\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 373, in execute
+    rec.execute(self)
+  File "C:\Anaconda3\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 532, in execute
+    uow
+  File "C:\Anaconda3\lib\site-packages\sqlalchemy\orm\persistence.py", line 170, in save_obj
+    mapper, table, update)
+  File "C:\Anaconda3\lib\site-packages\sqlalchemy\orm\persistence.py", line 706, in _emit_update_statements
+    execute(statement, multiparams)
+  File "C:\Anaconda3\lib\site-packages\sqlalchemy\engine\base.py", line 914, in execute
+    return meth(self, multiparams, params)
+  File "C:\Anaconda3\lib\site-packages\sqlalchemy\sql\elements.py", line 323, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "C:\Anaconda3\lib\site-packages\sqlalchemy\engine\base.py", line 1010, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "C:\Anaconda3\lib\site-packages\sqlalchemy\engine\base.py", line 1146, in _execute_context
+    context)
+  File "C:\Anaconda3\lib\site-packages\sqlalchemy\engine\base.py", line 1341, in _handle_dbapi_exception
+    exc_info
+  File "C:\Anaconda3\lib\site-packages\sqlalchemy\util\compat.py", line 202, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "C:\Anaconda3\lib\site-packages\sqlalchemy\util\compat.py", line 185, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Anaconda3\lib\site-packages\sqlalchemy\engine\base.py", line 1139, in _execute_context
+    context)
+  File "C:\Anaconda3\lib\site-packages\sqlalchemy\engine\default.py", line 450, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: user.nickname [SQL: 'UPDATE user SET nickname=?, about_me=? WHERE user.id = ?'] [parameters: ('dup', '', 2)]
+2016-08-24 21:23:05,111 INFO: microblog startup [in D:\PyCharm Projects\microblog\app\__init__.py:57]
+2016-08-24 21:23:19,373 ERROR: Exception on /edit [POST] [in C:\Anaconda3\lib\site-packages\flask\app.py:1587]
+Traceback (most recent call last):
+  File "C:\Anaconda3\lib\site-packages\sqlalchemy\orm\base.py", line 379, in _entity_descriptor
+    return getattr(entity, key)
+AttributeError: type object 'User' has no attribute 'nicknmae'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Anaconda3\lib\site-packages\flask\app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Anaconda3\lib\site-packages\flask\app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Anaconda3\lib\site-packages\flask\app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Anaconda3\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Anaconda3\lib\site-packages\flask\app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Anaconda3\lib\site-packages\flask\app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Anaconda3\lib\site-packages\flask_login.py", line 792, in decorated_view
+    return func(*args, **kwargs)
+  File "D:\PyCharm Projects\microblog\app\views.py", line 145, in edit
+    if form.validate_on_submit():
+  File "C:\Anaconda3\lib\site-packages\flask_wtf\form.py", line 166, in validate_on_submit
+    return self.is_submitted() and self.validate()
+  File "D:\PyCharm Projects\microblog\app\forms.py", line 47, in validate
+    user = User.query.filter_by(nicknmae=self.nickname.data).first()
+  File "C:\Anaconda3\lib\site-packages\sqlalchemy\orm\query.py", line 1510, in filter_by
+    for key, value in kwargs.items()]
+  File "C:\Anaconda3\lib\site-packages\sqlalchemy\orm\query.py", line 1510, in <listcomp>
+    for key, value in kwargs.items()]
+  File "C:\Anaconda3\lib\site-packages\sqlalchemy\orm\base.py", line 383, in _entity_descriptor
+    (description, key)
+sqlalchemy.exc.InvalidRequestError: Entity '<class 'app.models.User'>' has no property 'nicknmae'
+2016-08-24 21:24:38,709 ERROR: Exception on /edit [POST] [in C:\Anaconda3\lib\site-packages\flask\app.py:1587]
+Traceback (most recent call last):
+  File "C:\Anaconda3\lib\site-packages\sqlalchemy\orm\base.py", line 379, in _entity_descriptor
+    return getattr(entity, key)
+AttributeError: type object 'User' has no attribute 'nicknmae'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Anaconda3\lib\site-packages\flask\app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Anaconda3\lib\site-packages\flask\app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Anaconda3\lib\site-packages\flask\app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Anaconda3\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Anaconda3\lib\site-packages\flask\app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Anaconda3\lib\site-packages\flask\app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Anaconda3\lib\site-packages\flask_login.py", line 792, in decorated_view
+    return func(*args, **kwargs)
+  File "D:\PyCharm Projects\microblog\app\views.py", line 145, in edit
+    if form.validate_on_submit():
+  File "C:\Anaconda3\lib\site-packages\flask_wtf\form.py", line 166, in validate_on_submit
+    return self.is_submitted() and self.validate()
+  File "D:\PyCharm Projects\microblog\app\forms.py", line 47, in validate
+    user = User.query.filter_by(nicknmae=self.nickname.data).first()
+  File "C:\Anaconda3\lib\site-packages\sqlalchemy\orm\query.py", line 1510, in filter_by
+    for key, value in kwargs.items()]
+  File "C:\Anaconda3\lib\site-packages\sqlalchemy\orm\query.py", line 1510, in <listcomp>
+    for key, value in kwargs.items()]
+  File "C:\Anaconda3\lib\site-packages\sqlalchemy\orm\base.py", line 383, in _entity_descriptor
+    (description, key)
+sqlalchemy.exc.InvalidRequestError: Entity '<class 'app.models.User'>' has no property 'nicknmae'
+2016-08-24 21:26:04,336 INFO: microblog startup [in D:\PyCharm Projects\microblog\app\__init__.py:57]
+2016-08-24 21:39:31,735 INFO: microblog startup [in D:\PyCharm Projects\microblog\app\__init__.py:57]
+2016-09-08 22:51:17,945 INFO: microblog startup [in D:\PyCharm Projects\microblog\app\__init__.py:57]
+2016-09-08 22:51:42,227 ERROR: Exception on /callback/google [GET] [in C:\Anaconda3\lib\site-packages\flask\app.py:1587]
+Traceback (most recent call last):
+  File "C:\Anaconda3\lib\site-packages\flask\app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Anaconda3\lib\site-packages\flask\app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Anaconda3\lib\site-packages\flask\app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Anaconda3\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Anaconda3\lib\site-packages\flask\app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Anaconda3\lib\site-packages\flask\app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PyCharm Projects\microblog\app\views.py", line 95, in oauth_callback
+    social_id, username, email = oauth.callback()
+  File "D:\PyCharm Projects\microblog\app\oauth.py", line 78, in callback
+    decoder=json.loads
+  File "C:\Anaconda3\lib\site-packages\rauth\service.py", line 556, in get_auth_session
+    session = self.get_session(self.get_access_token(method, **kwargs))
+  File "C:\Anaconda3\lib\site-packages\rauth\service.py", line 542, in get_access_token
+    access_token, = process_token_request(r, decoder, key)
+  File "C:\Anaconda3\lib\site-packages\rauth\service.py", line 20, in process_token_request
+    data = decoder(r.content)
+  File "C:\Anaconda3\lib\json\__init__.py", line 312, in loads
+    s.__class__.__name__))
+TypeError: the JSON object must be str, not 'bytes'
+2016-09-08 22:51:50,935 ERROR: Exception on /callback/facebook [GET] [in C:\Anaconda3\lib\site-packages\flask\app.py:1587]
+Traceback (most recent call last):
+  File "C:\Anaconda3\lib\site-packages\sqlalchemy\engine\base.py", line 1139, in _execute_context
+    context)
+  File "C:\Anaconda3\lib\site-packages\sqlalchemy\engine\default.py", line 450, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: user
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Anaconda3\lib\site-packages\flask\app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Anaconda3\lib\site-packages\flask\app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Anaconda3\lib\site-packages\flask\app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Anaconda3\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Anaconda3\lib\site-packages\flask\app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Anaconda3\lib\site-packages\flask\app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\PyCharm Projects\microblog\app\views.py", line 99, in oauth_callback
+    user = User.query.filter_by(social_id=social_id).first()
+  File "C:\Anaconda3\lib\site-packages\sqlalchemy\orm\query.py", line 2659, in first
+    ret = list(self[0:1])
+  File "C:\Anaconda3\lib\site-packages\sqlalchemy\orm\query.py", line 2457, in __getitem__
+    return list(res)
+  File "C:\Anaconda3\lib\site-packages\sqlalchemy\orm\query.py", line 2761, in __iter__
+    return self._execute_and_instances(context)
+  File "C:\Anaconda3\lib\site-packages\sqlalchemy\orm\query.py", line 2776, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "C:\Anaconda3\lib\site-packages\sqlalchemy\engine\base.py", line 914, in execute
+    return meth(self, multiparams, params)
+  File "C:\Anaconda3\lib\site-packages\sqlalchemy\sql\elements.py", line 323, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "C:\Anaconda3\lib\site-packages\sqlalchemy\engine\base.py", line 1010, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "C:\Anaconda3\lib\site-packages\sqlalchemy\engine\base.py", line 1146, in _execute_context
+    context)
+  File "C:\Anaconda3\lib\site-packages\sqlalchemy\engine\base.py", line 1341, in _handle_dbapi_exception
+    exc_info
+  File "C:\Anaconda3\lib\site-packages\sqlalchemy\util\compat.py", line 202, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "C:\Anaconda3\lib\site-packages\sqlalchemy\util\compat.py", line 185, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Anaconda3\lib\site-packages\sqlalchemy\engine\base.py", line 1139, in _execute_context
+    context)
+  File "C:\Anaconda3\lib\site-packages\sqlalchemy\engine\default.py", line 450, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: user [SQL: 'SELECT user.id AS user_id, user.social_id AS user_social_id, user.nickname AS user_nickname, user.email AS user_email, user.about_me AS user_about_me, user.last_seen AS user_last_seen \nFROM user \nWHERE user.social_id = ?\n LIMIT ? OFFSET ?'] [parameters: ('facebook$10111430316970054', 1, 0)]
+2016-09-08 22:52:29,017 INFO: microblog startup [in D:\PyCharm Projects\microblog\app\__init__.py:57]
+2016-09-08 22:52:30,246 INFO: microblog startup [in D:\PyCharm Projects\microblog\app\__init__.py:57]
+2016-09-08 23:06:24,381 INFO: microblog startup [in D:\PyCharm Projects\microblog\app\__init__.py:57]
+2016-09-08 23:06:25,501 INFO: microblog startup [in D:\PyCharm Projects\microblog\app\__init__.py:57]
+2016-09-08 23:14:59,386 INFO: microblog startup [in D:\PyCharm Projects\microblog\app\__init__.py:57]
+2016-09-08 23:15:00,475 INFO: microblog startup [in D:\PyCharm Projects\microblog\app\__init__.py:57]
+2016-09-08 23:18:15,753 INFO: microblog startup [in D:\PyCharm Projects\microblog\app\__init__.py:57]
+2016-09-08 23:19:10,966 INFO: microblog startup [in D:\PyCharm Projects\microblog\app\__init__.py:57]
+2016-09-08 23:19:12,122 INFO: microblog startup [in D:\PyCharm Projects\microblog\app\__init__.py:57]
+2016-09-08 23:22:42,796 INFO: microblog startup [in D:\PyCharm Projects\microblog\app\__init__.py:57]
+2016-09-08 23:22:54,774 INFO: microblog startup [in D:\PyCharm Projects\microblog\app\__init__.py:57]
+2016-09-08 23:23:42,203 INFO: microblog startup [in D:\PyCharm Projects\microblog\app\__init__.py:57]
