@@ -238,3 +238,7 @@ sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: user 
 2016-09-08 23:22:42,796 INFO: microblog startup [in D:\PyCharm Projects\microblog\app\__init__.py:57]
 2016-09-08 23:22:54,774 INFO: microblog startup [in D:\PyCharm Projects\microblog\app\__init__.py:57]
 2016-09-08 23:23:42,203 INFO: microblog startup [in D:\PyCharm Projects\microblog\app\__init__.py:57]
+2016-09-08 23:40:18,622 INFO: microblog startup [in D:\PyCharm Projects\microblog\app\__init__.py:57]
+2016-09-08 23:40:19,775 INFO: microblog startup [in D:\PyCharm Projects\microblog\app\__init__.py:57]
+2016-09-08 23:48:51,011 INFO: microblog startup [in D:\PyCharm Projects\microblog\app\__init__.py:57]
+2016-09-08 23:49:33,089 INFO: microblog startup [in D:\PyCharm Projects\microblog\app\__init__.py:57]
